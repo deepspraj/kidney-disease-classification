@@ -1,0 +1,85 @@
+<html>
+  <head>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href='static/css/base.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="header">
+        <a href="{{url_for('home')}}"><i class="fa fa-home"></i></a>
+        <a href="https://github.com/deepspraj"><i class="fa fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/deepak-prajapati-92139417a/"><i class="fa fa-linkedin"></i></a>
+    </div>
+
+    <div id="content" width="25%">
+        <p style="font-size: 72px; letter-spacing: 5px; margin-top: 8vh;"><b>AI</b> in<br>Medical Field</p>
+        <p style="font-size: 50px;">Kidney Disease Classification</p>
+        <p id="predpara" style="text-align: center; font-size:30px;"></p> 
+    </div>
+
+
+  
+    <form id="dropFileForm" action="{{url_for('predict')}}" method="POST" onsubmit="uploadFiles(event)" enctype="multipart/form-data">
+      <input type="file" name="imageFile" id="fileInput" multiple onchange="addFiles(event)" accept="image/png, image/jpeg, image/jpg" >
+      <label for="fileInput" id="fileLabel" ondragover="overrideDefault(event);fileHover();" ondragenter="overrideDefault(event);fileHover();" ondragleave="overrideDefault(event);fileHoverEnd();" ondrop="overrideDefault(event);fileHoverEnd();
+            addFiles(event);">
+        <i class="fa fa-download fa-5x"></i>
+        <br>
+        <span id="fileLabelText">
+          Choose a file or drag it here
+        </span>
+        <br>
+        <span id="uploadStatus"></span>
+      </label>
+      <input type="submit" value="Upload" class="uploadButton">
+    </form>
+
+
+    <script src="static/js/jquery-3.6.0.min.js"></script>
+    <script start src="static/js/base.js"></script>
+
+
+
+
+  <br>
+    <h1>Sample Images of Classification</h1>
+  <div class="myGallery">
+  <div class="item">
+    <img src="https://i.ibb.co/SQXKfHY/Cyst-1040.jpg"/>
+    <span class="caption">Class : Cyst</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/FKvS9mp/image.jpg"/>
+    <span class="caption">Class : Normal</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/ftBh9pB/Stone-432.jpg"/>
+    <span class="caption">Class : Kidney Stone</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/47SSQLV/Tumor-1007.jpg" />
+    <span class="caption">Class : Tumor</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/w0HZCYB/Cyst-1411.jpg"/>
+    <span class="caption">Class : Cyst</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/PcBhNq5/Normal-1417.jpg"/>
+    <span class="caption">Class : Normal</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/KhK0fVT/Stone-612.jpg"/>
+    <span class="caption">Class : Kidney Stone</span>
+  </div>
+  <div class="item">
+    <img src="https://i.ibb.co/Xb8qHQd/Tumor-1467.jpg"/>
+    <span class="caption">Class : Tumor</span>
+  </div>
+  </div>
+</div>
+<p><em><small>Support and motivate by giving star for this repository on <a href="https://github.com/deepspraj" style="color:chartreuse;">github</a>.</small></em></p>
+</body>
+
+</html>
